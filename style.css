@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f0f;
+  color: #f5efe6;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  height: 100vh;
+
+  background:
+    url("https://images.unsplash.com/photo-1513151233558-d860c5398176")
+    center/cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.8)
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+button {
+  border: none;
+  outline: none;
+
+  background: #d6b27c;
+  color: #111;
+
+  padding: 14px 28px;
+
+  border-radius: 40px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #f0cf96;
+  transform: scale(1.05);
+}
+
+/* SECTIONS */
+
+.intro,
+.messages-section,
+.final-note {
+  max-width: 1100px;
+  margin: auto;
+
+  padding: 90px 20px;
+
+  text-align: center;
+}
+
+.intro h2,
+.messages-section h2,
+.final-note h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+
+.intro p,
+.final-note p {
+  max-width: 700px;
+  margin: auto;
+  color: #cfcfcf;
+  font-size: 1.1rem;
+}
+
+/* MESSAGE GRID */
+
+.messages-grid {
+  margin-top: 50px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+/* MESSAGE CARD */
+
+.message-card {
+  background: #f5efe6;
+  color: #111;
+
+  padding: 30px;
+
+  border-radius: 22px;
+
+  text-align: left;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.25);
+
+  transform: translateY(25px);
+
+  opacity: 0;
+
+  animation: fadeUp .8s ease forwards;
+}
+
+.message-card h3 {
+  margin-bottom: 12px;
+  color: #7a4e21;
+}
+
+.river-word {
+  margin-bottom: 16px;
+
+  font-size: 0.95rem;
+
+  color: #666;
+
+  font-style: italic;
+}
+
+.river-word span {
+  color: #7a4e21;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.message-card p:last-child {
+  line-height: 1.8;
+}
+
+.error-message {
+  color: #f5efe6;
+  font-size: 1rem;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .intro h2,
+  .messages-section h2,
+  .final-note h2 {
+    font-size: 2rem;
+  }
+
+}
