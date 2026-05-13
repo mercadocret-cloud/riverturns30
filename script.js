@@ -73,7 +73,7 @@ async function loadMessages() {
 
 /* HOW MANY PHOTOS EXIST */
 
-const totalImages = 32;
+const totalImages = 34;
 
 /* AUTO GENERATE IMAGE ARRAY */
 
