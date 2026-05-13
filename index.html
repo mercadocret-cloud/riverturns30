@@ -20,18 +20,30 @@
     <div class="hero-content">
       <p class="small-title">A Birthday Celebration</p>
       <h1>Happy 30th Birthday, River</h1>
-      <p> Since everyone is spread across the country, we created this little corner
-      of the internet to celebrate you.</p>
-
+      <p>A collection of messages from the people who love you most.</p>
       <button onclick="scrollToMessages()">Read the Messages</button>
     </div>
   </section>
 
   <section class="intro">
     <h2>Thirty Years of Memories</h2>
+
     <p>
-  images here
+      Since everyone is spread across the country, we created this little corner
+      of the internet to celebrate you.
     </p>
+
+    <div class="slideshow">
+      <button class="slide-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+
+      <div class="slide-frame">
+        <img id="memorySlide" src="images/1.jpg" alt="River memory photo">
+      </div>
+
+      <button class="slide-btn next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="slide-dots" id="slideDots"></div>
   </section>
 
   <section id="messages" class="messages-section">
@@ -47,38 +59,5 @@
   </section>
 
   <script src="script.js"></script>
-</body>
-</html>
-  <section class="intro">
-    <h2>Thirty Years of Memories</h2>
-
-    <p>
-      Since everyone is spread across the country,
-      we created this little corner of the internet
-      to celebrate you.
-    </p>
-  </section>
-
-  <section id="messages" class="messages-section">
-
-    <h2>Birthday Messages</h2>
-
-    <div id="messagesGrid" class="messages-grid"></div>
-
-  </section>
-
-  <section class="final-note">
-
-    <h2>One Last Thing...</h2>
-
-    <p>
-      You are deeply loved, appreciated,
-      and celebrated today and always.
-    </p>
-
-  </section>
-
-  <script src="script.js"></script>
-
 </body>
 </html>
