@@ -80,7 +80,7 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* CONFETTI ONLY ON HERO */
+/* CONFETTI */
 
 .confetti {
   position: absolute;
@@ -132,6 +132,7 @@ button:hover {
   0% {
     transform: translateY(-20px) rotate(0deg);
   }
+
   100% {
     transform: translateY(110vh) rotate(360deg);
   }
@@ -162,6 +163,87 @@ button:hover {
   margin: auto;
   color: var(--gray);
   font-size: 1.1rem;
+}
+
+/* SLIDESHOW */
+
+.slideshow {
+  position: relative;
+  max-width: 850px;
+  margin: 45px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-frame {
+  width: 100%;
+  height: 480px;
+  background: var(--white);
+  border: 3px solid rgba(47, 168, 79, 0.25);
+  border-radius: 24px;
+  box-shadow: 0 14px 35px rgba(16, 33, 43, 0.15);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--white);
+  transition: opacity 0.3s ease;
+}
+
+.slide-btn {
+  position: absolute;
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.slide-btn:hover {
+  background: var(--navy);
+}
+
+.prev {
+  left: -22px;
+}
+
+.next {
+  right: -22px;
+}
+
+.slide-dots {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.slide-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(16, 33, 43, 0.25);
+  cursor: pointer;
+}
+
+.slide-dot.active {
+  background: var(--green);
 }
 
 /* MESSAGE GRID */
@@ -208,6 +290,11 @@ button:hover {
   line-height: 1.8;
 }
 
+.error-message {
+  color: var(--navy);
+  font-size: 1rem;
+}
+
 .final-note {
   background: var(--navy);
   color: var(--white);
@@ -244,5 +331,23 @@ button:hover {
   .messages-section h2,
   .final-note h2 {
     font-size: 2rem;
+  }
+
+  .slide-frame {
+    height: 330px;
+  }
+
+  .prev {
+    left: 8px;
+  }
+
+  .next {
+    right: 8px;
+  }
+
+  .slide-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.4rem;
   }
 }
