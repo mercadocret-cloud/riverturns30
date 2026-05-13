@@ -169,6 +169,7 @@ button:hover {
 
 .slideshow {
   position: relative;
+  width: 100%;
   max-width: 850px;
   margin: 45px auto 0;
   display: flex;
@@ -178,12 +179,17 @@ button:hover {
 
 .slide-frame {
   width: 100%;
-  height: 480px;
+  max-width: 850px;
+
+  /* responsive height */
+  height: clamp(260px, 60vw, 520px);
+
   background: var(--white);
   border: 3px solid rgba(47, 168, 79, 0.25);
   border-radius: 24px;
   box-shadow: 0 14px 35px rgba(16, 33, 43, 0.15);
   overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,6 +199,7 @@ button:hover {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
   background: var(--white);
   transition: opacity 0.3s ease;
 }
@@ -200,18 +207,25 @@ button:hover {
 .slide-btn {
   position: absolute;
   z-index: 5;
-  width: 48px;
-  height: 48px;
+
+  width: clamp(38px, 9vw, 52px);
+  height: clamp(38px, 9vw, 52px);
+
   border-radius: 50%;
   background: var(--green);
   color: var(--white);
   border: none;
-  font-size: 1.7rem;
+
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+
   cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 0;
+  box-shadow: 0 8px 20px rgba(16, 33, 43, 0.18);
 }
 
 .slide-btn:hover {
@@ -219,24 +233,26 @@ button:hover {
 }
 
 .prev {
-  left: -22px;
+  left: clamp(8px, 2vw, 18px);
 }
 
 .next {
-  right: -22px;
+  right: clamp(8px, 2vw, 18px);
 }
 
 .slide-dots {
   margin-top: 20px;
+  padding: 0 12px;
+
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 9px;
 }
 
 .slide-dot {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: rgba(16, 33, 43, 0.25);
   cursor: pointer;
@@ -244,6 +260,34 @@ button:hover {
 
 .slide-dot.active {
   background: var(--green);
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 480px) {
+  .intro,
+  .messages-section,
+  .final-note {
+    padding: 65px 16px;
+  }
+
+  .slideshow {
+    margin-top: 35px;
+  }
+
+  .slide-frame {
+    height: 300px;
+    border-radius: 18px;
+  }
+
+  .slide-dots {
+    gap: 7px;
+  }
+
+  .slide-dot {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 /* MESSAGE GRID */
